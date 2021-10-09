@@ -3,6 +3,7 @@ const express = require("express"),
   router = express.Router(),
   passport = require("passport"),
   nodemailer = require("nodemailer");
+  stripe = require("stripe")(require("../../../client/src/components/config").swk);
 
 // fetching the schemas
 const Hospital = require("../../models/Hospital"),
@@ -125,7 +126,49 @@ router.get("/search-:schid", (req, res) => {
     .catch((err) => console.log(err));
 });
 
-
+/*
+@type - POST
+@route - /api/doctor/checkout
+@desc - a route to process payment for credits' request
+@access - PRIVATE
+*/
+router.post(
+  "/checkout",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    stripe.customers
+      .create({
+        source: req.body.stripeToken.id,
+        email: req.body.stripeToken.email,
+      })
+      .then((customer) => {
+        stripe.charges
+          .create({
+            currency: "usd",
+            customer: customer.id,
+            description: "Add Credits To Dashboard",
+            amount: 1000,
+          })
+          .then((charge) => {
+            Hospital.findOne({ _id: req.user._id })
+              .then((hospital) => {
+                hospital.credits += 10;
+                hospital
+                  .save()
+                  .then((hospital) => {
+                    return res
+                      .status(200)
+                      .json({ paymentSuccess: "Payment was successful" });
+                  })
+                  .catch((err) => console.log(err));
+              })
+              .catch((err) => console.log(err));
+          })
+          .catch((err) => console.log(err));
+      })
+      .catch((err) => console.log(err));
+  }
+);
 
 // exporting the routes
 module.exports = router;
