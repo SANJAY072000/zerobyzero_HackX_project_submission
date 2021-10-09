@@ -47,6 +47,118 @@ router.post("/register/hospital", (req, res) => {
     .catch((err) => console.log(err));
 });
 
+/*
+@type - POST
+@route - /api/auth/login/hospital
+@desc - a route to login hospital
+@access - PUBLIC
+*/
+router.post("/login/hospital", (req, res) => {
+  const hEmail = req.body.hEmail,
+    hPassword = req.body.hPassword;
+  Hospital.findOne({ hEmail })
+    .then((hospital) => {
+      if (!hospital)
+        return res
+          .status(200)
+          .json({ hospitalNotRegistered: "Your hospital is not registered" });
+      bcrypt
+        .compare(hPassword, hospital.hPassword)
+        .then((isCorrect) => {
+          if (isCorrect) {
+            const payload = {
+              id: hospital._id,
+              hName: hospital.hName,
+              hEmail: hospital.hEmail,
+              hPassword: hospital.hPassword,
+              hLocation: hospital.hLocation,
+              credits: hospital.credits,
+            };
+            jsonwt.sign(
+              payload,
+              config.secret,
+              { expiresIn: 3600 },
+              (err, token) => {
+                if (err) throw err;
+                res
+                  .status(200)
+                  .json({ success: true, token: `Bearer ${token}` });
+              }
+            );
+          } else
+            return res.status(200).json({
+              passwordIncorrect: "Your hospital password is incorrect",
+            });
+        })
+        .catch((err) => console.log(err));
+    })
+    .catch((err) => console.log(err));
+});
+
+/*
+@type - POST
+@route - /api/auth/register/patient
+@desc - a route to register patient
+@access - PUBLIC
+*/
+router.post("/register/patient", (req, res) => {
+  Patient.findOne({ pEmail: req.body.pEmail })
+    .then((patient) => {
+      if (patient)
+        return res.status.json({
+          patientAlreadyRegistered: "You are already registered",
+        });
+      const newPatient = new Patient({
+        pName: req.body.pName,
+        pEmail: req.body.pEmail,
+        pPassword: req.body.pPassword,
+      });
+      bcrypt.genSalt(10, (err, salt) => {
+        bcrypt.hash(newPatient.pPassword, salt, (err, hash) => {
+          if (err) throw err;
+          newPatient.pPassword = hash;
+          newPatient
+            .save()
+            .then((patient) =>res.status(200).json(patient))
+            .catch((err) => console.log(err));
+        });
+      });
+    })
+    .catch((err) => console.log(err));
+});
+
+/*
+@type - POST
+@route - /api/auth/login/patient
+@desc - a route to login patient
+@access - PUBLIC
+*/
+router.post("/login/patient", (req, res) => {
+  const pEmail = req.body.pEmail,
+    pPassword = req.body.pPassword;
+  Patient.findOne({ pEmail })
+    .then((patient) => {
+      if (!patient)
+        return res
+          .status(200)
+          .json({ patientNotRegistered: "You are not registered" });
+      bcrypt
+        .compare(pPassword, patient.pPassword)
+        .then((isCorrect) => {
+          if (isCorrect) {
+            res
+              .status(200)
+              .json({ loggedInSuccessfully: "You are successfully logged in" });
+          } else
+            return res
+              .status(200)
+              .json({ passwordIncorrect: "You entered a wrong password" });
+        })
+        .catch((err) => console.log(err));
+    })
+    .catch((err) => console.log(err));
+});
+
 
 // exporting the routes
 module.exports = router;

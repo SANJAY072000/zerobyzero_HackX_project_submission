@@ -30,6 +30,12 @@ const auth = require("./routes/api/auth"),
 app.use(bodyparser.urlencoded({ extended: true }));
 app.use(bodyparser.json());
 
+// configuring middleware for passport
+app.use(passport.initialize());
+
+// fetching the strategy
+require("./strategies/jsonwtStrategy")(passport);
+
 // configuring middleware for cors
 app.use(cors());
 
