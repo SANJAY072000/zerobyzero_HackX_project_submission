@@ -35,5 +35,10 @@ containerized using docker and docker compose.
 6. Docker compose will make sure all services start automatically.
 
 
+Note: Locally project will not work because some credentials have been removed from the code. View demo [here](https://ltcg.herokuapp.com/).
+
+
+
+
 Feel free to contribute to this project with some new ideas. If you like the concept, please star this repository.
 
