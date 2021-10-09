@@ -21,11 +21,22 @@ mongoose
   .then(() => console.log("Mongodb connected successfully"))
   .catch((err) => console.log(err));
 
+// fetching the routes
+const auth = require("./routes/api/auth"),
+  doctor = require("./routes/api/doctors"),
+  appointment = require("./routes/api/appointments");
 
+// configuring middleware for bodyparser
+app.use(bodyparser.urlencoded({ extended: true }));
+app.use(bodyparser.json());
 
 // configuring middleware for cors
 app.use(cors());
 
+// calling the routes
+app.use("/api/auth", auth);
+app.use("/api/doctor", doctor);
+app.use("/api/appointment", appointment);
 
 // serving the files from the server
 if (process.env.NODE_ENV === "production") {
