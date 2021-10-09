@@ -159,6 +159,48 @@ router.post("/login/patient", (req, res) => {
     .catch((err) => console.log(err));
 });
 
+/*
+@type - GET
+@route - /api/auth/testlogin/hospital
+@desc - a route to test login of the hospital
+@access - PRIVATE
+*/
+router.get(
+  "/testlogin/hospital",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    Hospital.findOne({ _id: req.user._id })
+      .then((hospital) => res.status(200).json(hospital))
+      .catch((err) => console.log(err));
+  }
+);
+
+/*
+@type - DELETE
+@route - /api/auth/delete
+@desc - a route to delete hospital account
+@access - PRIVATE
+*/
+router.delete(
+  "/delete",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    Doctor.find({ user: req.user._id })
+      .then((doctor) => {
+        doctor.forEach((a) => {
+          Doctor.findOneAndRemove({ _id: a._id })
+            .then(() => console.log("Removed Successfully"))
+            .catch((err) => console.log(err));
+          Hospital.findOneAndRemove({ _id: req.user._id })
+            .then(() =>
+              res.status(200).json({ Deleted: "Removed Successfully" })
+            )
+            .catch((err) => console.log(err));
+        });
+      })
+      .catch((err) => console.log(err));
+  }
+);
 
 // exporting the routes
 module.exports = router;
