@@ -3,7 +3,6 @@ const express = require("express"),
   router = express.Router(),
   passport = require("passport"),
   nodemailer = require("nodemailer");
-  // stripe = require("stripe")(require("../../../client/src/components/config").swk);
 
 // fetching the schemas
 const Hospital = require("../../models/Hospital"),
@@ -72,6 +71,59 @@ router.post(
       .catch((err) => console.log(err));
   }
 );
+
+/*
+@type - POST
+@route - /api/doctor/editStatus-:dcid
+@desc - a route to edit doctors' status of the hospital
+@access - PRIVATE
+*/
+router.post(
+  "/editStatus-:dcid",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    Doctor.findOne({ _id: req.params.dcid })
+      .then((doctor) => {
+        doctor.status = req.body.status;
+        doctor.currentToken = req.body.currentToken;
+        doctor
+          .save()
+          .then((doctor) => res.status(200).json(doctor))
+          .catch((err) => console.log(err));
+      })
+      .catch((err) => console.log(err));
+  }
+);
+
+/*
+@type - DELETE
+@route - /api/doctor/delStatus-:dcid
+@desc - a route to delete doctor from the hospital
+@access - PRIVATE
+*/
+router.delete(
+  "/delStatus-:dcid",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    Doctor.findOneAndRemove({ _id: req.params.dcid })
+      .then(() =>
+        res.status(200).json({ doctorDeleted: "Doctor deleted successfully" })
+      )
+      .catch((err) => console.log(err));
+  }
+);
+
+/*
+@type - GET
+@route - /api/doctor/search-:schid
+@desc - a route to get the doctor's current status
+@access - PUBLIC
+*/
+router.get("/search-:schid", (req, res) => {
+  Doctor.find({ _id: req.params.schid })
+    .then((doctor) => res.status(200).json({ doctor }))
+    .catch((err) => console.log(err));
+});
 
 
 
