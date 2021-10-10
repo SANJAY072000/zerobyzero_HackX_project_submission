@@ -1,0 +1,269 @@
+body .navbar .navbar-brand .bdic {
+  background: linear-gradient(#833ab4, #fd1d1d, #fcb045);
+  -webkit-background-clip: text;
+  color: transparent; }
+body .navbar .navbar-brand .tken {
+  font-weight: bolder;
+  font-family: "Catamaran", sans-serif;
+  font-size: 1.7em;
+  background: linear-gradient(#00f260, #0575e6);
+  -webkit-background-clip: text;
+  color: transparent; }
+body .navbar .navbar-brand .fsty {
+  font-family: "Dancing Script", cursive;
+  font-size: 1.3em;
+  background: linear-gradient(#ff512f, #dd2476);
+  -webkit-background-clip: text;
+  color: transparent; }
+body .navbar .nav-item .idbt {
+  border: 2px solid #568701;
+  padding: 10px 20px;
+  font-weight: bolder;
+  font-family: "Tinos", serif; }
+body .navbar .nav-item .idbt:hover {
+  background-color: #568701;
+  padding: 10px 20px;
+  color: white;
+  font-weight: bolder;
+  font-family: "Tinos", serif; }
+body .navbar .nav-item .fa-lightbulb-o {
+  font-size: 1.4em;
+  color: #eec213; }
+body header,
+body aside,
+body .lgerr {
+  width: 100%;
+  height: 725px;
+  background: url("../images/welcome.jpg") no-repeat center center fixed;
+  background-size: cover; }
+  body header .bng1,
+  body aside .bng1,
+  body .lgerr .bng1 {
+    font-size: 1.8em;
+    font-family: "Catamaran", sans-serif; }
+  body header .bng2,
+  body aside .bng2,
+  body .lgerr .bng2 {
+    font-size: 2.5em;
+    font-family: "Tinos", serif;
+    color: #218f76; }
+  body header .idbt2,
+  body aside .idbt2,
+  body .lgerr .idbt2 {
+    border: 2px solid #fff;
+    color: #fff;
+    background-color: #c22026;
+    font-weight: bolder;
+    font-family: "Catamaran", sans-serif; }
+  body header .idbt2:hover,
+  body aside .idbt2:hover,
+  body .lgerr .idbt2:hover {
+    border: 2px solid #c22026;
+    color: #c22026;
+    background-color: #fff;
+    font-weight: bolder;
+    font-family: "Catamaran", sans-serif; }
+  body header .idbt3,
+  body aside .idbt3,
+  body .lgerr .idbt3 {
+    border: 2px solid #fff;
+    color: #fff;
+    background-color: black;
+    font-weight: bolder;
+    font-family: "Catamaran", sans-serif; }
+  body header .idbt3:hover,
+  body aside .idbt3:hover,
+  body .lgerr .idbt3:hover {
+    border: 2px solid black;
+    color: black;
+    background-color: #fff;
+    font-weight: bolder;
+    font-family: "Catamaran", sans-serif; }
+body section {
+  background-color: #f4f4f4; }
+  body section h3 {
+    font-weight: bolder;
+    font-size: 2.3em;
+    font-family: "Catamaran", sans-serif; }
+    body section h3 .bf {
+      color: #568701; }
+  body section .card .fa {
+    font-size: 5em;
+    color: #568701; }
+  body section .card .card-title {
+    font-size: 1.5em;
+    font-family: "Noto Sans KR", sans-serif; }
+body aside {
+  width: 100%;
+  height: 700px;
+  background: url(../images/welcome.jpg) no-repeat center center fixed;
+  background-size: cover; }
+body footer,
+body .adc {
+  background-color: #3c40c6; }
+  body footer h1,
+  body .adc h1 {
+    font-family: "Open Sans Condensed", sans-serif; }
+body .hle,
+body .hre {
+  color: #e44236;
+  font-size: 1.5em;
+  font-family: "Tinos", serif; }
+body .hlfm {
+  font-family: "Bree Serif", serif; }
+  body .hlfm .form-group {
+    font-size: 1em; }
+    body .hlfm .form-group input {
+      margin-top: 0px; }
+  body .hlfm .edibt {
+    background-color: #fff;
+    color: #e44236;
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 1em;
+    border: 2px solid #e44236; }
+  body .hlfm .edibt:hover {
+    background-color: #e44236;
+    color: #fff;
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 1em; }
+  body .hlfm .edrgt {
+    background-color: #fff;
+    color: #e44236;
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 1em;
+    border: 2px solid #e44236; }
+  body .hlfm .edrgt:hover {
+    background-color: #e44236;
+    color: #fff;
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 1em; }
+body .adc {
+  background-color: #1287a5; }
+  body .adc .adcbt {
+    background-color: #fff;
+    color: #e44236;
+    font-family: "Tinos", serif;
+    font-size: 1.25em; }
+  body .adc .adcbt:hover {
+    background-color: #e44236;
+    color: #fff;
+    font-family: "Tinos", serif;
+    font-size: 1.25em; }
+  body .adc .crdes {
+    font-family: "Dancing Script", cursive; }
+body .estu:hover {
+  background-color: #009688;
+  color: #fff;
+  font-family: "Catamaran", sans-serif;
+  font-size: 1.25em; }
+body .estu {
+  background-color: #009688;
+  color: #fff;
+  font-family: "Catamaran", sans-serif;
+  font-size: 1.25em; }
+body .tlef {
+  background-color: #77aa77;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 2 1'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='0' x2='0' y1='0' y2='1' gradientTransform='rotate(0,0.5,0.5)'%3E%3Cstop offset='0' stop-color='%2377aa77'/%3E%3Cstop offset='1' stop-color='%234fd'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='0' y1='0' x2='0' y2='1' gradientTransform='rotate(0,0.5,0.5)'%3E%3Cstop offset='0' stop-color='%23cf8' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23cf8' stop-opacity='1'/%3E%3C/linearGradient%3E%3ClinearGradient id='c' gradientUnits='userSpaceOnUse' x1='0' y1='0' x2='2' y2='2' gradientTransform='rotate(0,0.5,0.5)'%3E%3Cstop offset='0' stop-color='%23cf8' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23cf8' stop-opacity='1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='0' y='0' fill='url(%23a)' width='2' height='1'/%3E%3Cg %3E%3Cpolygon fill='url(%23b)' points='0 1 0 0 2 0'/%3E%3Cpolygon fill='url(%23c)' points='2 1 2 0 0 0'/%3E%3C/g%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-size: cover; }
+  body .tlef .bhabi {
+    font-size: 5em;
+    background: linear-gradient(#654ea3, #eaafc8);
+    -webkit-background-clip: text;
+    color: transparent; }
+  body .tlef .ban {
+    font-family: "Dancing Script", cursive; }
+  body .tlef .tap {
+    font-family: "Tinos", serif; }
+
+@media (min-width: 992px) {
+  body .navbar .navbar-brand .bdic {
+    background: linear-gradient(#833ab4, #fd1d1d, #fcb045);
+    -webkit-background-clip: text;
+    color: transparent; }
+  body .navbar .navbar-brand .tken {
+    font-weight: bolder;
+    font-family: "Catamaran", sans-serif;
+    font-size: 1.7em;
+    background: linear-gradient(#00f260, #0575e6);
+    -webkit-background-clip: text;
+    color: transparent; }
+  body .navbar .navbar-brand .fsty {
+    font-family: "Dancing Script", cursive;
+    font-size: 1.3em;
+    background: linear-gradient(#ff512f, #dd2476);
+    -webkit-background-clip: text;
+    color: transparent; }
+  body .navbar .nav-item .idbt {
+    border: 2px solid #568701;
+    padding: 10px 20px;
+    font-weight: bolder;
+    font-family: "Tinos", serif; }
+  body .navbar .nav-item .idbt:hover {
+    background-color: #568701;
+    padding: 10px 20px;
+    color: white;
+    font-weight: bolder;
+    font-family: "Tinos", serif; }
+  body .navbar .nav-item .fa-lightbulb-o {
+    font-size: 1.4em; }
+  body header {
+    width: 100%;
+    height: 725px;
+    background: url("../images/welcome.jpg") no-repeat center center fixed;
+    background-size: cover; }
+    body header .bng1 {
+      font-size: 2.3em;
+      font-family: "Catamaran", sans-serif; }
+    body header .bng2 {
+      font-size: 3em;
+      font-family: "Tinos", serif;
+      color: #218f76; }
+  body .hle {
+    color: #3c40c6;
+    font-size: 2em;
+    font-family: "Tinos", serif; }
+  body .hlfm {
+    font-family: "Bree Serif", serif; }
+    body .hlfm .form-group {
+      font-size: 1.3em; }
+      body .hlfm .form-group input {
+        margin-top: 10px; }
+    body .hlfm .edibt {
+      background-color: #fff;
+      color: #3c40c6;
+      font-family: "Noto Sans KR", sans-serif;
+      font-size: 1.25em;
+      border: 2px solid #3c40c6; }
+    body .hlfm .edibt:hover {
+      background-color: #3c40c6;
+      color: #fff;
+      font-family: "Noto Sans KR", sans-serif;
+      font-size: 1.25em; }
+    body .hlfm .edrgt {
+      background-color: #fff;
+      color: #568701;
+      font-family: "Noto Sans KR", sans-serif;
+      font-size: 1.25em;
+      border: 2px solid #568701; }
+    body .hlfm .edrgt:hover {
+      background-color: #568701;
+      color: #fff;
+      font-family: "Noto Sans KR", sans-serif;
+      font-size: 1.25em; }
+  body .hre {
+    color: #568701; }
+  body .adc {
+    background-color: #3c40c6; }
+    body .adc .adcbt {
+      background-color: #218f76;
+      color: #fff;
+      font-family: "Tinos", serif;
+      font-size: 1.25em; }
+    body .adc .adcbt:hover {
+      background-color: #fff;
+      color: #218f76;
+      font-family: "Tinos", serif;
+      font-size: 1.25em; } }
+
+/*# sourceMappingURL=ttt.css.map */

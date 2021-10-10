@@ -1,0 +1,268 @@
+// importing the mixins file
+@import "mixins";
+
+// defining colors
+$rockingRed: (
+  rr1: #e44236,
+  rr2: #ea425c,
+  rr3: #e8290b,
+);
+$beautifulBlue: (
+  bb1: #3498db,
+  bb2: #25ccf7,
+  bb3: #3c40c6,
+);
+$golfGreen: (
+  gg1: #45ce30,
+  gg2: #019031,
+  gg3: #218f76,
+);
+$freshYellow: (
+  fy1: #eec213,
+  fy2: #f3cc79,
+  fy3: #e1da00,
+);
+$oldGrey: (
+  og1: #7b8788,
+  og2: #47535e,
+  og3: #758aa2,
+);
+
+// defining functions for colors
+@function rr($a) {
+  @return map-get($rockingRed, $a);
+}
+@function bb($a) {
+  @return map-get($beautifulBlue, $a);
+}
+@function gg($a) {
+  @return map-get($golfGreen, $a);
+}
+@function fy($a) {
+  @return map-get($freshYellow, $a);
+}
+@function og($a) {
+  @return map-get($oldGrey, $a);
+}
+
+// media queries
+
+// for device of xs width
+body {
+  .navbar {
+    .navbar-brand {
+      .bdic {
+        @include bdic();
+      }
+      .tken {
+        @include tken();
+      }
+      .fsty {
+        @include fsty();
+      }
+    }
+    .nav-item {
+      .idbt {
+        @include idbt();
+      }
+      .idbt:hover {
+        @include idbtHover();
+      }
+      .fa-lightbulb-o {
+        @include fa-lightbulb-o();
+      }
+    }
+  }
+  header,
+  aside,
+  .lgerr {
+    @include header();
+    .bng1 {
+      @include bng1-md();
+    }
+    .bng2 {
+      @include bng2-md();
+    }
+    .idbt2 {
+      @include idbt2();
+    }
+    .idbt2:hover {
+      @include idbt2Hover();
+    }
+    .idbt3 {
+      @include idbt3();
+    }
+    .idbt3:hover {
+      @include idbt3Hover();
+    }
+  }
+  section {
+    background-color: #f4f4f4;
+    h3 {
+      @include section-h3();
+      .bf {
+        color: #568701;
+      }
+    }
+    .card {
+      .fa {
+        @include section-card-fa();
+      }
+      .card-title {
+        @include section-card-title();
+      }
+    }
+  }
+  aside {
+    @include aside();
+  }
+  footer,
+  .adc {
+    background-color: bb(bb3);
+    h1 {
+      font-family: "Open Sans Condensed", sans-serif;
+    }
+  }
+  .hle,
+  .hre {
+    @include hle-xs();
+  }
+  .hlfm {
+    font-family: "Bree Serif", serif;
+    .form-group {
+      font-size: 1em;
+      input {
+        margin-top: 0px;
+      }
+    }
+    .edibt {
+      @include edibt-xs();
+    }
+    .edibt:hover {
+      @include edibtHover-xs();
+    }
+    .edrgt {
+      @include edrgt-xs();
+    }
+    .edrgt:hover {
+      @include edrgtHover-xs();
+    }
+  }
+  .adc {
+    background-color: #1287a5;
+    .adcbt {
+      @include adcbt();
+    }
+    .adcbt:hover {
+      @include adcbtHover();
+    }
+    .crdes {
+      font-family: "Dancing Script", cursive;
+    }
+  }
+  .estu:hover {
+    @include estu();
+  }
+  .estu {
+    @include estu();
+  }
+  .tlef {
+    @include tlef();
+    .bhabi {
+      @include bhabhi();
+    }
+    .ban {
+      font-family: "Dancing Script", cursive;
+    }
+    .tap {
+      font-family: "Tinos", serif;
+    }
+  }
+}
+
+// for device of sm width
+@media (min-width: 576px) {
+}
+
+// for device of md width
+@media (min-width: 768px) {
+}
+
+// for device of lg width
+@media (min-width: 992px) {
+  body {
+    .navbar {
+      .navbar-brand {
+        .bdic {
+          @include bdic();
+        }
+        .tken {
+          @include tken();
+        }
+        .fsty {
+          @include fsty();
+        }
+      }
+      .nav-item {
+        .idbt {
+          @include idbt();
+        }
+        .idbt:hover {
+          @include idbtHover();
+        }
+        .fa-lightbulb-o {
+          font-size: 1.4em;
+        }
+      }
+    }
+    header {
+      @include header();
+      .bng1 {
+        @include bng1();
+      }
+      .bng2 {
+        @include bng2();
+      }
+    }
+    .hle {
+      @include hle();
+    }
+    .hlfm {
+      font-family: "Bree Serif", serif;
+      .form-group {
+        font-size: 1.3em;
+        input {
+          margin-top: 10px;
+        }
+      }
+      .edibt {
+        @include edibt();
+      }
+      .edibt:hover {
+        @include edibtHover();
+      }
+      .edrgt {
+        @include edrgt();
+      }
+      .edrgt:hover {
+        @include edrgtHover();
+      }
+    }
+    .hre {
+      color: #568701;
+    }
+    .adc {
+      background-color: bb(bb3);
+      .adcbt {
+        @include adcbt-lg();
+      }
+      .adcbt:hover {
+        @include adcbt-lg-Hover();
+      }
+    }
+  }
+}
+
+// for device of xl width
+@media (min-width: 1200px) {
+}
